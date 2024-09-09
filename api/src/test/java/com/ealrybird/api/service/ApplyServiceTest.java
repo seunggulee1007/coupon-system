@@ -28,7 +28,7 @@ class ApplyServiceTest {
         long count = couponRepository.count();
 
         // then
-        assertThat(1).isEqualTo(count);
+        assertThat(count).isEqualTo(1);
 
     }
 }
