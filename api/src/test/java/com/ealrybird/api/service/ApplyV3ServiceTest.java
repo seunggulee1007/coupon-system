@@ -3,6 +3,8 @@ package com.ealrybird.api.service;
 import com.ealrybird.api.repository.CouponRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -15,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class ApplyV3ServiceTest {
 
+    private static final Logger log = LoggerFactory.getLogger(ApplyV3ServiceTest.class);
     @Autowired
     private ApplyV3Service applyV3Service;
 
@@ -35,6 +38,7 @@ class ApplyV3ServiceTest {
             long userId = i;
             service.submit(() -> {
                 try{
+                    log.error("호출!!!!");
                     applyV3Service.apply(userId);
                 }finally {
                     latch.countDown();

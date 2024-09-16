@@ -22,6 +22,6 @@ public class ApplyV3Service {
             return;
         }
 
-        couponCreateProducer.create(userId);
+        couponCreateProducer.create(Long.toString(userId));
     }
 }
