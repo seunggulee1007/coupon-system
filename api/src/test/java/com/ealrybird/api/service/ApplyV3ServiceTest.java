@@ -38,7 +38,6 @@ class ApplyV3ServiceTest {
             long userId = i;
             service.submit(() -> {
                 try{
-                    log.error("호출!!!!");
                     applyV3Service.apply(userId);
                 }finally {
                     latch.countDown();
